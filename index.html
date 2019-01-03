@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Salesforce Certification Counter</title>
+<link rel="stylesheet" type="text/css" href="assets/css/style.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Averia+Serif+Libre">
+</head>
+<body>
+
+<h1>Salesforce Developer I Certification</h1>
+<h3>Score Counter</h3>
+<div id="box">
+    <form>
+        Logic and Process Automation:<br>
+        <input class="numb" id="logic">
+        <br>
+        Testing:<br>
+        <input class="numb" id="test">
+        <br>
+        Data Modeling and Management:<br>
+        <input class="numb" id="data">
+        <br>
+        User Interface:<br>
+        <input class="numb" id="user">
+        <br>
+        Debug and Deployment Tools:<br>
+        <input class="numb" id="debug">
+        <br>
+        Salesforce Fundamentals:<br>
+        <input class="numb" id="fund">
+        <br>
+        <button type="button" onclick="myFunction()">Submit</button>
+    </form>
+    <p id="demo"></p>
+    <p id="demo2"></p>
+</div>
+  <script>
+    function myFunction() {
+      var x, text;
+    
+      // Get the value of the input field with class="numb"
+      x = document.querySelectorAll(".numb");
+      console.log(x);
+        for (let i=0 ; i<x.length ;i++){
+            // If x is Not a Number or less than one or greater than 10
+            if (isNaN(x[i].value) || x[i].value < 0 || x[i].value > 100 || x[i].value=="") {
+                    text = true;
+                    document.getElementById("demo2").innerHTML = "Check your input";
+                    break;           
+            }
+        }
+        if (!text){
+           count();
+        }
+      
+    }
+
+    function count(){
+        var total;
+        var x1 = document.getElementById("logic").value;
+        var x2 = document.getElementById("test").value;
+        var x3 = document.getElementById("data").value;
+        var x4 = document.getElementById("user").value;
+        var x5 = document.getElementById("debug").value;
+        var x6 = document.getElementById("fund").value;
+
+        total= x1*0.46+x2*0.12+x3*0.12+x4*0.1+x5*0.1+x6*0.1;
+        document.getElementById("demo2").innerHTML = total;
+    }
+    
+    
+    </script>
+
+</body>
+</html>
